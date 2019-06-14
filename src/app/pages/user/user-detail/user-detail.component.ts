@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+// NgRx State Management
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store/state/app.state';
-import { ActivatedRoute } from '@angular/router';
-import { selectSelectedUser } from 'src/app/store/selectors/user.selectors';
 import { GetUser } from 'src/app/store/actions/user.actions';
+import { selectSelectedUser } from 'src/app/store/selectors/user.selectors';
 
 @Component({
   template: `

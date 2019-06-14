@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { selectUserList } from 'src/app/store/selectors/user.selectors';
+import { Router } from '@angular/router';
+
+// NgRx State Management
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store/state/app.state';
-import { Router } from '@angular/router';
 import { GetUsers } from 'src/app/store/actions/user.actions';
+import { selectUserList } from 'src/app/store/selectors/user.selectors';
 
 @Component({
   template: `
