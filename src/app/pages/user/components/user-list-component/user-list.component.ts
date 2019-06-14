@@ -24,7 +24,7 @@ import { User } from 'src/app/pages/user/models/user';
     </table>
   `,
 })
-export class UsersComponent implements OnInit {
+export class UserListComponent implements OnInit {
   @Input() users: User[];
   @Output() userSelected: EventEmitter<number> = new EventEmitter();
   constructor() {}

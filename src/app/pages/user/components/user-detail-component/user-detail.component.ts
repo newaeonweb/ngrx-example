@@ -11,7 +11,7 @@ import { User } from 'src/app/pages/user/models/user';
     </div>
   `,
 })
-export class UserDetailsComponent implements OnInit {
+export class UserDetailComponent implements OnInit {
   @Input() user: User;
   constructor() {}
 

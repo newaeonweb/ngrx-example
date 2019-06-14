@@ -14,6 +14,7 @@ import { GetUser } from 'src/app/store/actions/user.actions';
 })
 export class UserDetailPageComponent implements OnInit {
   user$ = this.store.pipe(select(selectSelectedUser));
+
   constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
 
   ngOnInit() {

@@ -7,8 +7,8 @@ import { UserListPageComponent } from './user-list/user-list.component';
 import { UserDetailPageComponent } from './user-detail/user-detail.component';
 
 // Pages components
-import { UserDetailsComponent } from './components/user-details-component/user-details.component';
-import { UsersComponent } from './components/user-list-component/user-list.component';
+import { UserDetailComponent } from './components/user-detail-component/user-detail.component';
+import { UserListComponent } from './components/user-list-component/user-list.component';
 
 // Module Routes
 import { userRoutes } from './user.route';
@@ -17,8 +17,8 @@ import { userRoutes } from './user.route';
   declarations: [
     UserListPageComponent,
     UserDetailPageComponent,
-    UsersComponent,
-    UserDetailsComponent,
+    UserListComponent,
+    UserDetailComponent,
   ],
   imports: [RouterModule.forChild(userRoutes), CommonModule],
 })
