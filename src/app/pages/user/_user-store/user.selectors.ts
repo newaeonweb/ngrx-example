@@ -1,8 +1,8 @@
-import { createSelector } from '@ngrx/store';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { AppState } from '../../../app-store/state/app.state';
 import { UserState } from './user.state';
 
-const selectUsers = (state: AppState) => state.users;
+const selectUsers = createFeatureSelector<UserState>('user');
 
 export const selectUserList = createSelector(
   selectUsers,

@@ -1,8 +1,8 @@
-import { createSelector } from '@ngrx/store';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { AppState } from '../../../app-store/state/app.state';
 import { ConfigState } from './config.state';
 
-const configState = (state: AppState) => state.config;
+const configState = createFeatureSelector<ConfigState>('config');
 
 export const selectConfig = createSelector(
   configState,

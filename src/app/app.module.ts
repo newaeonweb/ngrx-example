@@ -1,38 +1,36 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+
+// NGRX State managemant modules
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
+// NGRX State managemant imports
+import { AppStoreModule } from './app-store/app-store.module';
 import { appReducers } from './app-store/reducers/app.reducer';
-import { environment } from '../environments/environment';
-import { AppRoutingModule } from './app-routing.module';
 
-import { ConfigEffects } from './pages/user/_user-store/config.effects';
-import { UserEffects } from './pages/user/_user-store/user.effects';
-
-import { AppComponent } from './app.component';
-import { UserService } from './pages/user/services/user.service';
-
+// App modules
 import { BeerModule } from './pages/beer/beer.module';
 import { UserModule } from './pages/user/user.module';
+
+// App components
+import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    BeerModule,
-    HttpClientModule,
-    StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([UserEffects, ConfigEffects]),
-    StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
     AppRoutingModule,
+    HttpClientModule,
+    AppStoreModule,
+    BeerModule,
     UserModule,
   ],
-  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
