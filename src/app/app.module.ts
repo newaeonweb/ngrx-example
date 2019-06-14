@@ -14,10 +14,10 @@ import { UserEffects } from './store/effects/user.effects';
 import { AppComponent } from './app.component';
 import { UserService } from './services/user.service';
 
-import { UsersComponent as UsersContainerComponent } from './pages/users/users.component';
-import { UsersComponent } from './components/users/users.component';
-import { UserComponent } from './pages/user/user.component';
-import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UsersComponent as UsersContainerComponent } from './pages/users/user-list/users.component';
+import { UsersComponent } from './pages/users/components/user-list-component/user-list.component';
+import { UserComponent } from './pages/users/user-detail/user.component';
+import { UserDetailsComponent } from './pages/users/components/user-details-component/user-details.component';
 import { BeerModule } from './pages/beer/beer.module';
 
 @NgModule({
