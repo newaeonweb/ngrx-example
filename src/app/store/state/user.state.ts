@@ -1,4 +1,4 @@
-import { User } from '../../models/user';
+import { User } from '../../pages/user/models/user';
 
 export interface UserState {
   users: User[];

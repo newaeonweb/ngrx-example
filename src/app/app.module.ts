@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ConfigEffects } from './store/effects/config.effects';
 import { UserEffects } from './store/effects/user.effects';
 import { AppComponent } from './app.component';
-import { UserService } from './services/user.service';
+import { UserService } from './pages/user/services/user.service';
 
 import { BeerModule } from './pages/beer/beer.module';
 import { UserModule } from './pages/user/user.module';

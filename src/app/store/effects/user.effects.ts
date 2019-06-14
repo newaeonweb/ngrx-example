@@ -7,8 +7,8 @@ import { switchMap, map, withLatestFrom } from 'rxjs/operators';
 import { AppState } from '../state/app.state';
 import * as fromUser from '../actions/user.actions';
 
-import { UserService } from '../../services/user.service';
-import { UserHttp } from '../../models/http-models/user-http';
+import { UserService } from '../../pages/user/services/user.service';
+import { UserHttp } from '../../pages/user/models/user-http';
 import { selectUserList } from '../selectors/user.selectors';
 
 @Injectable()
