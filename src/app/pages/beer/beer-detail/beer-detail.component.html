@@ -1,5 +1,6 @@
 <div *ngIf="beer$ | async as beerDetail">
   <div *ngFor="let beer of beerDetail">
+    <img src="{{ beer.image_url }}" alt="" srcset="">
     <p> {{ beer.name }} </p>
     <p>{{ beer.description }}</p>
   </div>
