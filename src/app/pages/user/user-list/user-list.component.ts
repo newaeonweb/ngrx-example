@@ -15,7 +15,7 @@ import { GetUsers } from 'src/app/store/actions/user.actions';
     </div>
   `,
 })
-export class UserListComponent implements OnInit {
+export class UserListPageComponent implements OnInit {
   users$ = this.store.pipe(select(selectUserList));
 
   constructor(private store: Store<AppState>, private router: Router) {}

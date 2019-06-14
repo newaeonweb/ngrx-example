@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 // Modules Pages
-import { UserListComponent as UserPageComponent } from './user-list/user-list.component';
-import { UserDetailComponent as UserDetailPageComponent } from './user-detail/user-detail.component';
+import { UserListPageComponent } from './user-list/user-list.component';
+import { UserDetailPageComponent } from './user-detail/user-detail.component';
 
 // Pages components
 import { UserDetailsComponent } from './components/user-details-component/user-details.component';
@@ -15,7 +15,7 @@ import { userRoutes } from './user.route';
 
 @NgModule({
   declarations: [
-    UserPageComponent,
+    UserListPageComponent,
     UserDetailPageComponent,
     UsersComponent,
     UserDetailsComponent,
