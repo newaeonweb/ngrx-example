@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import { UserService } from './services/user.service';
 
 import { BeerModule } from './pages/beer/beer.module';
-import { UsersModule } from './pages/users/users.module';
+import { UserModule } from './pages/user/user.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +28,7 @@ import { UsersModule } from './pages/users/users.module';
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     AppRoutingModule,
-    UsersModule,
+    UserModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

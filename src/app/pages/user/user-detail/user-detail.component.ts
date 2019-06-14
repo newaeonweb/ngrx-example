@@ -12,7 +12,7 @@ import { GetUser } from 'src/app/store/actions/user.actions';
     </div>
   `,
 })
-export class UserComponent implements OnInit {
+export class UserDetailComponent implements OnInit {
   user$ = this.store.pipe(select(selectSelectedUser));
   constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
 
