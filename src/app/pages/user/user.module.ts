@@ -7,8 +7,8 @@ import { UserListPageComponent } from './user-list/user-list.component';
 import { UserDetailPageComponent } from './user-detail/user-detail.component';
 
 // Pages components
-import { UserDetailComponent } from './components/user-detail-component/user-detail.component';
-import { UserListComponent } from './components/user-list-component/user-list.component';
+import { UserDetailComponent } from './user-detail/components/user-detail.component';
+import { UserListComponent } from './user-list/components/user-list.component';
 
 // Module Routes
 import { userRoutes } from './user.route';
