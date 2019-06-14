@@ -6,11 +6,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
-import { appReducers } from './store/reducers/app.reducer';
+import { appReducers } from './app-store/reducers/app.reducer';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
-import { ConfigEffects } from './store/effects/config.effects';
-import { UserEffects } from './store/effects/user.effects';
+import { ConfigEffects } from './app-store/effects/config.effects';
+import { UserEffects } from './app-store/effects/user.effects';
 import { AppComponent } from './app.component';
 import { UserService } from './pages/user/services/user.service';
 
