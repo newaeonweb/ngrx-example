@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 // NgRx State Management
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/app-store/state/app.state';
-import { GetUsers } from 'src/app/app-store/actions/user.actions';
-import { selectUserList } from 'src/app/app-store/selectors/user.selectors';
+import { GetUsers } from '../_user-store/user.actions';
+import { selectUserList } from 'src/app/pages/user/_user-store/user.selectors';
 
 @Component({
   template: `

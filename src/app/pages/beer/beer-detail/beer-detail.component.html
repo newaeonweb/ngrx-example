@@ -1,7 +1,20 @@
-<div *ngIf="beer$ | async as beerDetail">
-  <div *ngFor="let beer of beerDetail">
-    <img src="{{ beer.image_url }}" alt="" srcset="">
-    <p> {{ beer.name }} </p>
-    <p>{{ beer.description }}</p>
+<div class="container">
+  <div *ngIf="beer$ | async as beerDetail">
+    <div *ngFor="let beer of beerDetail">
+      <div class="card is-text-center">
+        <img src="{{ beer.image_url }}" alt="" style="height:250px!important; margin: 0 auto;">
+        <header>
+          <h4 class="text-primary ">{{ beer.name }}</h4>
+          <p>Abv: {{beer.abv}}% | Ibu: {{beer.ibu}}</p>
+          <br>
+          <hr>
+        </header>
+        <p>{{ beer.description }}</p>
+        <hr>
+        <footer class="is-center">
+          <p class="text-grey"> <strong>First Brewed</strong> : {{ beer.first_brewed }}</p>
+        </footer>
+      </div>
+    </div>
   </div>
 </div>

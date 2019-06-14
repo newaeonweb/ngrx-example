@@ -3,9 +3,9 @@ import { Effect, ofType, Actions } from '@ngrx/effects';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-import { Config } from '../../pages/user/models/config';
-import { ConfigService } from '../../pages/user/services/config.service';
-import * as fromConfig from '../actions/config.actions';
+import { Config } from '../models/config';
+import { ConfigService } from '../services/config.service';
+import * as fromConfig from './config.actions';
 
 @Injectable()
 export class ConfigEffects {

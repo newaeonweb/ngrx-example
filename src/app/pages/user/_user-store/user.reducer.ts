@@ -1,5 +1,5 @@
-import { UserActionsType, UserActions } from '../actions/user.actions';
-import { UserState, initialUserState } from '../state/user.state';
+import { UserActionsType, UserActions } from './user.actions';
+import { UserState, initialUserState } from './user.state';
 
 export const userReducers = (
   state = initialUserState,

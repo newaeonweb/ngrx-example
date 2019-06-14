@@ -1,4 +1,4 @@
-import { Config } from '../../pages/user/models/config';
+import { Config } from '../models/config';
 
 export interface ConfigState {
   config: Config;

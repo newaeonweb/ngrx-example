@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { selectConfig } from './app-store/selectors/config.selectors';
 import { Store, select } from '@ngrx/store';
+
 import { AppState } from './app-store/state/app.state';
-import { GetConfig } from './app-store/actions/config.actions';
+import { GetConfig } from './pages/user/_user-store/config.actions';
+import { selectConfig } from './pages/user/_user-store/config.selectors';
 
 @Component({
   selector: 'app-root',

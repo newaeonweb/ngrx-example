@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Config } from '../../pages/user/models/config';
+import { Config } from '../models/config';
 
 export enum ConfigActionsType {
   GetConfig = '[Config] Get Config',

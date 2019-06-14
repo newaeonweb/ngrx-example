@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { User } from '../../pages/user/models/user';
+import { User } from '../models/user';
 
 export enum UserActionsType {
   GetUsers = '[User] Get Users',

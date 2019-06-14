@@ -4,12 +4,13 @@ import { Store, select } from '@ngrx/store';
 import { of } from 'rxjs';
 import { switchMap, map, withLatestFrom } from 'rxjs/operators';
 
-import { AppState } from '../state/app.state';
-import * as fromUser from '../actions/user.actions';
+import { UserService } from '../services/user.service';
+import { UserHttp } from '../models/user-http';
 
-import { UserService } from '../../pages/user/services/user.service';
-import { UserHttp } from '../../pages/user/models/user-http';
-import { selectUserList } from '../selectors/user.selectors';
+import { AppState } from '../../../app-store/state/app.state';
+import * as fromUser from './user.actions';
+
+import { selectUserList } from './user.selectors';
 
 @Injectable()
 export class UserEffects {

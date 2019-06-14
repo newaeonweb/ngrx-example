@@ -9,8 +9,10 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { appReducers } from './app-store/reducers/app.reducer';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
-import { ConfigEffects } from './app-store/effects/config.effects';
-import { UserEffects } from './app-store/effects/user.effects';
+
+import { ConfigEffects } from './pages/user/_user-store/config.effects';
+import { UserEffects } from './pages/user/_user-store/user.effects';
+
 import { AppComponent } from './app.component';
 import { UserService } from './pages/user/services/user.service';
 

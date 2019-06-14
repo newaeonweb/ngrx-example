@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
-import { AppState } from '../state/app.state';
-import { ConfigState } from '../state/config.state';
+import { AppState } from '../../../app-store/state/app.state';
+import { ConfigState } from './config.state';
 
 const configState = (state: AppState) => state.config;
 

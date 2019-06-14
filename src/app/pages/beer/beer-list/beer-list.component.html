@@ -1,67 +1,29 @@
 <div class="page">
   <div class="page-content">
     <div class="container">
-      <div class="container pp-section">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 px-0">
-            <form class="mt-3">
-              <div class="form-group">
-                <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="buscar"
-                  [ngModelOptions]="{standalone: true}">
-              </div>
-              <div class="row">
-                <div class="col-sm-3 col-md-2">
-                  <p>Filter by: </p>
-                </div>
-                <div class="col-sm-9 col-md-10 text-right">
-                  <button class="btn btn-light" *ngIf="selectedFilter" (click)="removeFilter()" placement="top"
-                    ngbTooltip="Remover Filtro"> X </button>
-                  <button class="btn" [ngClass]="selectedFilter === 'abv' ? 'btn-secondary' : 'btn-primary'"
-                    (click)="filterProperty('abv')">ABV</button>
-                  <button class="btn" [ngClass]="selectedFilter === 'ibu' ? 'btn-secondary' : 'btn-primary'"
-                    (click)="filterProperty('ibu')">IBU</button>
-                </div>
-              </div>
-            </form>
-          </div>
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="buscar"
+            [ngModelOptions]="{standalone: true}">
+        </div>
+      </form>
+      <br>
+      <div class="row">
+        <div class="card is-text-center col-6 col-4-md col-4-lg" *ngFor="let item of beers$ | async | search: searchText | filter: selectedFilter">
+          <header>
+            <h4><a routerLink="/beers/{{ item.id }}">{{item.name}}</a></h4>
+          </header>
+          <img class="img-fluid" [src]="item.image_url" [alt]="item.name"
+            style="height:250px!important; margin: 0 auto;" />
+          <p>
+            <span class="tag">Abv: {{item.abv}}%</span>
+            <span class="tag">Ibu: {{item.ibu}}</span>
+          </p>
+          <footer class="is-center">
+            <p> {{ item.tagline }} </p>
+          </footer>
         </div>
       </div>
-      <div class="container px-0 py-4">
-        <div class="pp-category-filter">
-          <div class="row">
-            <div class="col-sm-12">
-              <a class="btn btn-primary pp-filter-button" (click)="removeFilter()" data-filter="all">All</a>
-              <a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="people">People</a>
-              <a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="nature">Nature</a>
-              <a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="computer">Computer</a>
-              <a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="food">Food</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container px-0">
-        <div class="pp-gallery">
-          <div class="card-columns">
-            <div class="card" data-groups="[&quot;beer&quot;]"
-              *ngFor="let item of beers$ | async | search: searchText | filter: selectedFilter">
-              <a href="">
-                <figure class="pp-effect">
-                  <img class="img-fluid" [src]="item.image_url" [alt]="item.name"
-                    style="height:250px!important; margin: 0 auto;" />
-                  <figcaption>
-                    <div class="h4">
-                      <a routerLink="/beers/{{ item.id }}">{{item.name}}</a>
-                    </div>
-                    <p>Abv: {{item.abv}} | Ibu: {{item.ibu}}</p>
-                    <p> {{ item.tagline }} </p>
-                  </figcaption>
-                </figure>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="pp-section"></div>
     </div>
   </div>
 </div>
