@@ -14,6 +14,7 @@ import { UserModule } from './pages/user/user.module';
 
 // App components
 import { AppComponent } from './app.component';
+import { CartoonModule } from './pages/cartoon/cartoon.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { AppComponent } from './app.component';
     AppStoreModule,
     BeerModule,
     UserModule,
+    CartoonModule,
   ],
   bootstrap: [AppComponent],
 })

@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { UserStoreModule } from '../pages/user/_user-store/user-store.module';
 import { ConfigStoreModule } from '../pages/user/_user-store/config-store.module';
+import { CartoonStoreModule } from '../pages/cartoon/_cartoon-store/cartoon-store.module';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,7 @@ import { ConfigStoreModule } from '../pages/user/_user-store/config-store.module
     CommonModule,
     UserStoreModule,
     ConfigStoreModule,
+    CartoonStoreModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     !environment.production
