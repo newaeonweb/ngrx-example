@@ -6,10 +6,16 @@ import { RouterModule } from '@angular/router';
 import { CartoonListPageComponent } from './cartoon-list/cartoon-list-page.component';
 import { CartoonDetailPageComponent } from './cartoon-detail/cartoon-detail-page.component';
 
+import { EpisodeListPageComponent } from './episode-list/episode-list-page.component';
+
 import { cartoonRoutes } from './cartoon.route';
 
 @NgModule({
-  declarations: [CartoonListPageComponent, CartoonDetailPageComponent],
+  declarations: [
+    CartoonListPageComponent,
+    CartoonDetailPageComponent,
+    EpisodeListPageComponent,
+  ],
   imports: [CommonModule, RouterModule.forChild(cartoonRoutes)],
 })
 export class CartoonModule {}

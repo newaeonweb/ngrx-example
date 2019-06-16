@@ -10,7 +10,8 @@ import { CharacterHttp } from '../models/characterHttp';
 import { AppState } from '../../../app-store/state/app.state';
 import * as fromCartoon from './cartoon.actions';
 
-import { selectCartoonList } from './cartoon.selectors';
+import { selectCartoonList, selectEpisodeList } from './cartoon.selectors';
+import { EpisodeHttp } from '../models/episodeHttp';
 
 @Injectable()
 export class CartoonEffects {
@@ -45,6 +46,33 @@ export class CartoonEffects {
       )[0];
       console.log(selectedCharacter);
       return of(new fromCartoon.GetOneCharacterSuccess(selectedCharacter));
+    })
+  );
+
+  // Episode Effects
+  @Effect()
+  getAllEpisodes$ = this.actions$.pipe(
+    ofType<fromCartoon.GetAllEpisodes>(
+      fromCartoon.CharacterActionsType.GetAllEpisodes
+    ),
+    switchMap(() => this.cartoonService.getAllEpisodes()),
+    switchMap((episodeHttp: EpisodeHttp) =>
+      of(new fromCartoon.GetAllEpisodesSuccess(episodeHttp))
+    )
+  );
+
+  @Effect()
+  getOneEpisode$ = this.actions$.pipe(
+    ofType<fromCartoon.GetOneEpisode>(
+      fromCartoon.CharacterActionsType.GetOneEpisode
+    ),
+    map(action => action.payload),
+    withLatestFrom(this.store.pipe(select(selectEpisodeList))),
+    switchMap(([id, episodes]) => {
+      console.log(episodes);
+      const selectedEpisode = episodes.filter(charct => charct.id === +id)[0];
+      console.log(selectedEpisode);
+      return of(new fromCartoon.GetOneEpisodeSuccess(selectedEpisode));
     })
   );
 }

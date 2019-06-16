@@ -21,6 +21,23 @@ export const cartoonReducers = (
       };
     }
 
+    // Episode reducers
+
+    case CharacterActionsType.GetAllEpisodesSuccess: {
+      return {
+        ...state,
+        info: action.payload.info,
+        episodes: action.payload.results,
+      };
+    }
+
+    case CharacterActionsType.GetOneEpisodeSuccess: {
+      return {
+        ...state,
+        selectedEpisode: action.payload,
+      };
+    }
+
     default:
       return state;
   }
