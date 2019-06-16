@@ -8,6 +8,11 @@ export const selectCartoonList = createSelector(
   (state: CartoonState) => state.characters
 );
 
+export const selectCartoonInfo = createSelector(
+  selectCharacters,
+  (state: CartoonState) => state.info
+);
+
 export const selectSelectedCharacter = createSelector(
   selectCharacters,
   (state: CartoonState) => state.selectedCharacter

@@ -5,7 +5,10 @@ import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/app-store/state/app.state';
 import { GetAllCharacters } from '../_cartoon-store/cartoon.actions';
-import { selectCartoonList } from 'src/app/pages/cartoon/_cartoon-store/cartoon.selectors';
+import {
+  selectCartoonList,
+  selectCartoonInfo,
+} from 'src/app/pages/cartoon/_cartoon-store/cartoon.selectors';
 import { CartoonService } from '../services/cartoon.service';
 import { catchError, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -32,6 +35,7 @@ export class CartoonListPageComponent implements OnInit {
   // );
 
   characters$ = this.store.pipe(select(selectCartoonList));
+  info$ = this.store.pipe(select(selectCartoonInfo));
 
   ngOnInit() {
     this.store.dispatch(new GetAllCharacters());

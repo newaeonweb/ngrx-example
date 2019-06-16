@@ -23,8 +23,13 @@
   <div class="page-content">
     <div class="container">
       <div class="row">
+        <div class="col" *ngIf="info$ | async as info">
+        <p class="is-center">Characters found: {{info.count}} | Pages: {{ info.pages }}</p>
+        </div>
+      </div>
+      <div class="row">
         <div class="card is-text-center col-6 col-4-md col-4-lg"
-          *ngFor="let item of characters$ | async">
+          *ngFor="let item of characters$ | async" (click)="navigateTo(item.id)">
           <header>
             <h4><a routerLink="/character/{{ item.id }}">{{item.name}}</a></h4>
           </header>
@@ -41,4 +46,3 @@
       </div>
     </div>
   </div>
-</div>

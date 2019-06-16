@@ -39,9 +39,11 @@ export class CartoonEffects {
     map(action => action.payload),
     withLatestFrom(this.store.pipe(select(selectCartoonList))),
     switchMap(([id, characters]) => {
+      console.log(characters);
       const selectedCharacter = characters.filter(
         charct => charct.id === +id
       )[0];
+      console.log(selectedCharacter);
       return of(new fromCartoon.GetOneCharacterSuccess(selectedCharacter));
     })
   );

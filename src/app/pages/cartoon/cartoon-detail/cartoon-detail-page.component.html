@@ -1,3 +1,23 @@
-<div *ngFor="let prop of character$ | async">
-  <p>Name: {{ prop.name }}</p>
+<div class="container">
+  <div *ngIf="character$ | async as character">
+    <div class="card is-text-center">
+      <header>
+        <h4 class="text-primary ">{{ character.name }}</h4>
+        <img src="{{ character.image }}" alt="" style="height:250px!important; margin: 0 auto;">
+        <p>Status: {{ character.status }} | Species: {{ character.species }} | Gender: {{ character.gender }}</p>
+        <br>
+        <hr>
+      </header>
+      <div>
+        <h5>Episodes:</h5>
+        <ul>
+          <li *ngFor="let item of character.episode; let i = index "><a href="{{ item }}">Episode: {{ i + 1 }}</a></li>
+        </ul>
+      </div>
+      <hr>
+      <footer class="is-center">
+        <p class="text-grey"> <strong>Origin</strong> : {{ character.origin.name }}</p>
+      </footer>
+    </div>
+  </div>
 </div>

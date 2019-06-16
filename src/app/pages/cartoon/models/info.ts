@@ -1,6 +1,6 @@
 export interface Info {
-  count: 31;
-  pages: 2;
+  count: number;
+  pages: number;
   next: string;
   prev: string;
 }

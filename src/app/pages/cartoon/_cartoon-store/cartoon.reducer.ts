@@ -9,6 +9,7 @@ export const cartoonReducers = (
     case CharacterActionsType.GetAllCharactersSuccess: {
       return {
         ...state,
+        info: action.payload.info,
         characters: action.payload.results,
       };
     }
