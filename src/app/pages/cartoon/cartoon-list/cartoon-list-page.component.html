@@ -19,23 +19,26 @@
 </table>
 </div> -->
 
-<div>
-  <table class="table table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Origin</th>
-        <th scope="col">Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of characters$ | async" (click)="navigateTo(item.id)">
-        <td>{{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.origin.name }}</td>
-        <td>{{ item.status }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="page">
+  <div class="page-content">
+    <div class="container">
+      <div class="row">
+        <div class="card is-text-center col-6 col-4-md col-4-lg"
+          *ngFor="let item of characters$ | async">
+          <header>
+            <h4><a routerLink="/character/{{ item.id }}">{{item.name}}</a></h4>
+          </header>
+          <img class="img-fluid" [src]="item.image" [alt]="item.name"
+            style="height:250px!important; margin: 0 auto;" />
+          <p>
+            <span class="tag">Status: {{item.status}}</span>
+            <span class="tag">Species: {{item.species}}</span>
+          </p>
+          <footer class="is-center">
+            <p>Origin: {{ item.origin.name }} </p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
