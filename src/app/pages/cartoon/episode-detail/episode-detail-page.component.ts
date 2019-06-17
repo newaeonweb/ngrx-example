@@ -62,9 +62,13 @@ export class EpisodeDetailPageComponent implements OnInit {
   errorMessage: string;
   characters$: Observable<any>;
 
-  episode$ = this.store
-    .pipe(select(selectSelectedEpisode))
-    .pipe(tap(res => this.getCharacterId(res.characters)));
+  episode$ = this.store.pipe(select(selectSelectedEpisode)).pipe(
+    tap(res => {
+      if (res) {
+        return this.getCharacterId(res.characters);
+      }
+    })
+  );
 
   constructor(
     private store: Store<AppState>,

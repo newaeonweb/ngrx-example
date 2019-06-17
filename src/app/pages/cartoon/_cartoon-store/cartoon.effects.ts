@@ -40,12 +40,18 @@ export class CartoonEffects {
     map(action => action.payload),
     withLatestFrom(this.store.pipe(select(selectCartoonList))),
     switchMap(([id, characters]) => {
-      console.log(characters);
-      const selectedCharacter = characters.filter(
-        charct => charct.id === +id
-      )[0];
-      console.log(selectedCharacter);
-      return of(new fromCartoon.GetOneCharacterSuccess(selectedCharacter));
+      if (characters) {
+        const selectedCharacter = characters.filter(
+          charct => charct.id === +id
+        )[0];
+        return of(new fromCartoon.GetOneCharacterSuccess(selectedCharacter));
+      } else {
+        return this.cartoonService
+          .getOneCharacter(id)
+          .pipe(
+            map(character => new fromCartoon.GetOneCharacterSuccess(character))
+          );
+      }
     })
   );
 
@@ -69,10 +75,14 @@ export class CartoonEffects {
     map(action => action.payload),
     withLatestFrom(this.store.pipe(select(selectEpisodeList))),
     switchMap(([id, episodes]) => {
-      console.log(episodes);
-      const selectedEpisode = episodes.filter(charct => charct.id === +id)[0];
-      console.log(selectedEpisode);
-      return of(new fromCartoon.GetOneEpisodeSuccess(selectedEpisode));
+      if (episodes) {
+        const selectedEpisode = episodes.filter(charct => charct.id === +id)[0];
+        return of(new fromCartoon.GetOneEpisodeSuccess(selectedEpisode));
+      } else {
+        return this.cartoonService
+          .getOneEpisode(id)
+          .pipe(map(episode => new fromCartoon.GetOneEpisodeSuccess(episode)));
+      }
     })
   );
 }
