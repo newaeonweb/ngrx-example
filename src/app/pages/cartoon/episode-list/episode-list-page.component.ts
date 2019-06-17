@@ -4,18 +4,12 @@ import { Router } from '@angular/router';
 // NgRx State Management
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/app-store/state/app.state';
-import {
-  GetAllCharacters,
-  GetAllEpisodes,
-} from '../_cartoon-store/cartoon.actions';
+import { GetAllEpisodes } from '../_cartoon-store/cartoon.actions';
 import {
   selectEpisodeList,
   selectEpisodeInfo,
 } from 'src/app/pages/cartoon/_cartoon-store/cartoon.selectors';
 import { CartoonService } from '../services/cartoon.service';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
-import { of } from 'rxjs';
-import { Episode } from '../models/episode';
 
 @Component({
   selector: 'app-episode-list-page',
@@ -57,27 +51,15 @@ import { Episode } from '../models/episode';
 })
 export class EpisodeListPageComponent implements OnInit {
   errorMessage: string;
-  mutiple = [];
+
+  episodes$ = this.store.pipe(select(selectEpisodeList));
+  info$ = this.store.pipe(select(selectEpisodeInfo));
 
   constructor(
     private store: Store<AppState>,
     private cartoonService: CartoonService,
     private router: Router
   ) {}
-
-  // characters$ = this.cartoonService.getMultipleCharacters(this.array).pipe(
-  //   catchError(error => {
-  //     this.errorMessage = error;
-  //     return of(null);
-  //   })
-  // );
-
-  episodes$ = this.store.pipe(select(selectEpisodeList)).pipe(
-    map(res => res),
-    tap(res => console.log(res))
-  );
-
-  info$ = this.store.pipe(select(selectEpisodeInfo));
 
   ngOnInit() {
     this.store.dispatch(new GetAllEpisodes());
