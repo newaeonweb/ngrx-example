@@ -35,11 +35,15 @@ import { CartoonService } from '../services/cartoon.service';
                   <a routerLink="/episode/{{ item.id }}">{{ item.name }} </a>
                 </h4>
                 <hr />
-                <p>Season: {{ item.episode }}</p>
+                <p>
+                  Season: <span class="text-grey">{{ item.episode }}</span>
+                </p>
               </header>
 
               <footer class="is-center">
-                <p>On air: {{ item.air_date }}</p>
+                <p>
+                  On air: <span class="text-grey">{{ item.air_date }}</span>
+                </p>
               </footer>
             </div>
           </div>

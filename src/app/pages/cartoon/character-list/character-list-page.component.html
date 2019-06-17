@@ -34,13 +34,13 @@
             <h4><a routerLink="/character/{{ item.id }}">{{item.name}}</a></h4>
           </header>
           <img class="img-fluid" [src]="item.image" [alt]="item.name"
-            style="height:250px!important; margin: 0 auto;" />
+            style="height:250px!important; margin: 0 auto; border-radius: 5px;" />
           <p>
             <span class="tag">Status: {{item.status}}</span>
             <span class="tag">Species: {{item.species}}</span>
           </p>
           <footer class="is-center">
-            <p>Origin: {{ item.origin.name }} </p>
+            <p>Origin: <span class="text-grey">{{ item.origin.name }}</span></p>
           </footer>
         </div>
       </div>
