@@ -1,13 +1,12 @@
 <div class="container">
   <nav class="nav">
     <div class="nav-left">
-      <a [routerLink]="['/beers']" routerLinkActive="active"> Beers</a>
-      <a [routerLink]="['/cartoon']" routerLinkActive="active"> Cartoon</a>
-    </div>
-    <div class="nav-center">
       <a class="">NGRX-EXAMPLE</a>
     </div>
     <div class="nav-right">
+      <a [routerLink]="['/beers']" routerLinkActive="active"> Beers</a>
+      <a [routerLink]="['/characters']" routerLinkActive="active"> Characters</a>
+      <a [routerLink]="['/episodes']" routerLinkActive="active"> Episodes</a>
       <a [routerLink]="['/users']" routerLinkActive="active">{{ (config$ | async)?.adminName }}</a>
     </div>
   </nav>

@@ -5,8 +5,8 @@ import { EpisodeListPageComponent } from './episode-list/episode-list-page.compo
 import { EpisodeDetailPageComponent } from './episode-detail/episode-detail-page.component';
 
 export const cartoonRoutes: Routes = [
-  { path: 'cartoon', component: CartoonListPageComponent },
+  { path: 'characters', component: CartoonListPageComponent },
   { path: 'character/:id', component: CartoonDetailPageComponent },
-  { path: 'episode', component: EpisodeListPageComponent },
+  { path: 'episodes', component: EpisodeListPageComponent },
   { path: 'episode/:id', component: EpisodeDetailPageComponent },
 ];
