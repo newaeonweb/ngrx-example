@@ -42,6 +42,6 @@ export class CartoonListPageComponent implements OnInit {
   }
 
   navigateTo(id: number) {
-    this.router.navigate(['cartoon', id]);
+    this.router.navigate(['character', id]);
   }
 }
