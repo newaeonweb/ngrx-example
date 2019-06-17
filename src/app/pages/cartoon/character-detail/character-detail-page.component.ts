@@ -7,10 +7,10 @@ import { GetOneCharacter } from '../_cartoon-store/cartoon.actions';
 
 @Component({
   selector: 'app-cartoon-detail-page',
-  templateUrl: './cartoon-detail-page.component.html',
-  styleUrls: ['./cartoon-detail-page.component.scss'],
+  templateUrl: './character-detail-page.component.html',
+  styleUrls: ['./character-detail-page.component.scss'],
 })
-export class CartoonDetailPageComponent implements OnInit {
+export class CharacterDetailPageComponent implements OnInit {
   character$ = this.store.pipe(select(selectSelectedCharacter));
 
   constructor(private store: Store<AppState>, private route: ActivatedRoute) {}

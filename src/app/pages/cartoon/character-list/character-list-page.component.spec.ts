@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartoonListPageComponent } from './cartoon-list-page.component';
+import { CharacterListPageComponent } from './character-list-page.component';
 
 describe('CartoonListPageComponent', () => {
-  let component: CartoonListPageComponent;
-  let fixture: ComponentFixture<CartoonListPageComponent>;
+  let component: CharacterListPageComponent;
+  let fixture: ComponentFixture<CharacterListPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CartoonListPageComponent ]
-    })
-    .compileComponents();
+      declarations: [CharacterListPageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CartoonListPageComponent);
+    fixture = TestBed.createComponent(CharacterListPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

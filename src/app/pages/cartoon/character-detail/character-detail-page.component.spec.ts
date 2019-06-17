@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartoonDetailPageComponent } from './cartoon-detail-page.component';
+import { CharacterDetailPageComponent } from './character-detail-page.component';
 
 describe('CartoonDetailPageComponent', () => {
-  let component: CartoonDetailPageComponent;
-  let fixture: ComponentFixture<CartoonDetailPageComponent>;
+  let component: CharacterDetailPageComponent;
+  let fixture: ComponentFixture<CharacterDetailPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CartoonDetailPageComponent ]
-    })
-    .compileComponents();
+      declarations: [CharacterDetailPageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CartoonDetailPageComponent);
+    fixture = TestBed.createComponent(CharacterDetailPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

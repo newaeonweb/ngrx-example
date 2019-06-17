@@ -15,10 +15,10 @@ import { of } from 'rxjs';
 
 @Component({
   selector: 'app-cartoon-list-page',
-  templateUrl: './cartoon-list-page.component.html',
-  styleUrls: ['./cartoon-list-page.component.scss'],
+  templateUrl: './character-list-page.component.html',
+  styleUrls: ['./character-list-page.component.scss'],
 })
-export class CartoonListPageComponent implements OnInit {
+export class CharacterListPageComponent implements OnInit {
   errorMessage: string;
 
   constructor(
