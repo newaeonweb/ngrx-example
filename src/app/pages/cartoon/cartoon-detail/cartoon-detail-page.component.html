@@ -11,7 +11,9 @@
       <div>
         <h5>Episodes:</h5>
         <ul>
-          <li *ngFor="let item of character.episode; let i = index "><a href="{{ item }}">Episode: {{ i + 1 }}</a></li>
+          <li *ngFor="let item of character.episode; let i = index ">
+            <a routerLink="/episode/{{ i + 1 }}">Episode: {{ i + 1 }}</a>
+          </li>
         </ul>
       </div>
       <hr>
