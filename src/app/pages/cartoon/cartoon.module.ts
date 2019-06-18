@@ -12,6 +12,7 @@ import { EpisodeDetailPageComponent } from './episode-detail/episode-detail-page
 
 import { cartoonRoutes } from './cartoon.route';
 import { SearchCharacterPipe } from './character-list/pipes/search.pipe';
+import { EpisodeListComponent } from './episode-list/components/episode-list.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SearchCharacterPipe } from './character-list/pipes/search.pipe';
     EpisodeListPageComponent,
     EpisodeDetailPageComponent,
     SearchCharacterPipe,
+    EpisodeListComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(cartoonRoutes), FormsModule],
 })
