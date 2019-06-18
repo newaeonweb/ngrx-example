@@ -20,6 +20,7 @@ import { of } from 'rxjs';
 })
 export class CharacterListPageComponent implements OnInit {
   errorMessage: string;
+  searchText: string;
 
   constructor(
     private store: Store<AppState>,

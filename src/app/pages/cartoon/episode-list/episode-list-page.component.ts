@@ -27,12 +27,14 @@ import { CartoonService } from '../services/cartoon.service';
           <div class="row">
             <div
               class="card is-text-center col-6 col-4-md col-4-lg"
-              *ngFor="let item of episodes$ | async"
+              *ngFor="let item of episodes$ | async as episode; let i = index"
               (click)="navigateTo(item.id)"
             >
               <header>
                 <h4>
-                  <a routerLink="/episode/{{ item.id }}">{{ item.name }} </a>
+                  <a routerLink="/episode/{{ item.id }}"
+                    >#{{ i + 1 }} {{ item.name }}
+                  </a>
                 </h4>
                 <hr />
                 <p>

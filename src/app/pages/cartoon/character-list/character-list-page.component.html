@@ -22,14 +22,20 @@
 <div class="page">
   <div class="page-content">
     <div class="container">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="search"
+                  [ngModelOptions]="{standalone: true}">
+              </div>
+            </form>
       <div class="row">
         <div class="col" *ngIf="info$ | async as info">
         <p class="is-center">Characters found: {{info.count}} | Pages: {{ info.pages }}</p>
         </div>
       </div>
       <div class="row">
-        <div class="card is-text-center col-6 col-4-md col-4-lg"
-          *ngFor="let item of characters$ | async" (click)="navigateTo(item.id)">
+        <div class="card is-text-center col-6 col-4-md col-3-lg"
+          *ngFor="let item of characters$ | async | searchCharacter: searchText" (click)="navigateTo(item.id)">
           <header>
             <h4><a routerLink="/character/{{ item.id }}">{{item.name}}</a></h4>
           </header>
