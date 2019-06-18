@@ -30,7 +30,7 @@ import { of, Observable } from 'rxjs';
             <hr />
           </header>
           <div *ngIf="characters$ | async as character">
-            <h5>This episode have {{ character.length }} Characters:</h5>
+            <h5>This episode have {{ character.length }} Characters</h5>
             <ul class="row">
               <li class="col-3" *ngFor="let item of character">
                 <div class="card">
