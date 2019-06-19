@@ -27,7 +27,7 @@ import { Episode } from '../../models/episode';
                   <img
                     src="{{ item.image }}"
                     alt=""
-                    style="height:50px!important; margin: 0 auto; border-radius: 50%;"
+                    style="height:80px!important; margin: 0 auto; border-radius: 50%;"
                   />
                   <p>{{ item.name }}</p>
                 </a>
