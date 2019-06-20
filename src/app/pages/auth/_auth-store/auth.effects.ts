@@ -9,14 +9,15 @@ import * as fromAuth from './auth.actions';
 
 @Injectable()
 export class AuthEffects {
-  constructor(private configService: AuthService, private actions$: Actions) {}
+  constructor(private authService: AuthService, private actions$: Actions) {}
 
   @Effect()
   getAuth$ = this.actions$.pipe(
     ofType<fromAuth.GetAuth>(fromAuth.AuthActionsType.GetAuth),
-    switchMap(() => this.configService.getAuth()),
-    switchMap((config: Auth) => {
-      return of(new fromAuth.GetAuthSuccess(config));
+    switchMap(() => this.authService.getAuth()),
+    switchMap((auth: Auth) => {
+      console.log(auth);
+      return of(new fromAuth.GetAuthSuccess(auth));
     })
   );
 }

@@ -6,7 +6,7 @@
     <a [routerLink]="['/episodes']" routerLinkActive="active"> Episodes</a>
   </div>
   <div class="nav-right">
-    <a [routerLink]="['/users']" routerLinkActive="active">{{ (config$ | async)?.adminName }}</a>
+    <a [routerLink]="['/users']" routerLinkActive="active">{{ (auth$ | async)?.adminName }}</a>
   </div>
 </nav>
 <br>

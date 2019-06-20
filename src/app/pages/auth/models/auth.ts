@@ -1,4 +1,4 @@
-import { User } from '../../user/models/user';
+import { User } from '../../auth/models/user';
 
 export interface Auth {
   adminName: string;

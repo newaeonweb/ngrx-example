@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root',
 })
 export class AuthService {
-  authUrl = `${environment.apiUrl}config.json`;
+  authUrl = `${environment.apiUrl}auth.json`;
 
   constructor(private http: HttpClient) {}
 

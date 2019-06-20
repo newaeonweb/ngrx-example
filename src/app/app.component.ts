@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 
 import { AppState } from './app-store/state/app.state';
 import { GetAuth } from './pages/auth/_auth-store/auth.actions';
-import { selectConfig } from './pages/auth/_auth-store/auth.selectors';
+import { selectAuth } from './pages/auth/_auth-store/auth.selectors';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +13,9 @@ import { selectConfig } from './pages/auth/_auth-store/auth.selectors';
 export class AppComponent implements OnInit {
   constructor(private store: Store<AppState>) {}
   title = 'ngrx-example';
-  config$ = this.store.pipe(select(selectConfig));
+  auth$ = this.store.pipe(select(selectAuth));
 
   ngOnInit() {
-    this.store.dispatch(new GetAuth());
+    // this.store.dispatch(new GetAuth());
   }
 }

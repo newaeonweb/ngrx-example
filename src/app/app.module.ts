@@ -15,6 +15,7 @@ import { UserModule } from './pages/user/user.module';
 // App components
 import { AppComponent } from './app.component';
 import { CartoonModule } from './pages/cartoon/cartoon.module';
+import { AuthModule } from './pages/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { CartoonModule } from './pages/cartoon/cartoon.module';
     AppRoutingModule,
     HttpClientModule,
     AppStoreModule,
+    AuthModule,
     BeerModule,
     UserModule,
     CartoonModule,
