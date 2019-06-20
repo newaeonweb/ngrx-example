@@ -9,11 +9,11 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root',
 })
 export class AuthService {
-  authUrl = `${environment.apiUrl}auth.json`;
+  authUrl = `${environment.apiUrl}signin`;
 
   constructor(private http: HttpClient) {}
 
-  getAuth(): Observable<Auth> {
-    return this.http.get<Auth>(this.authUrl);
+  getAuth(email: string, password: string): Observable<Auth> {
+    return this.http.post<Auth>(this.authUrl, { email, password });
   }
 }

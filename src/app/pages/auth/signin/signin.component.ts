@@ -20,6 +20,10 @@ export class SigninComponent implements OnInit {
 
   onSubmit() {
     console.log(this.user);
-    this.store.dispatch(new GetAuth());
+    const payload = {
+      email: this.user.email,
+      password: this.user.password,
+    };
+    this.store.dispatch(new GetAuth(payload));
   }
 }

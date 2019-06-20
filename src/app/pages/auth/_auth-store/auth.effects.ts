@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Effect, ofType, Actions } from '@ngrx/effects';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 import { Auth } from '../models/auth';
@@ -14,7 +14,10 @@ export class AuthEffects {
   @Effect()
   getAuth$ = this.actions$.pipe(
     ofType<fromAuth.GetAuth>(fromAuth.AuthActionsType.GetAuth),
-    switchMap(() => this.authService.getAuth()),
+    map((action: fromAuth.GetAuth) => action.payload),
+    switchMap(payload =>
+      this.authService.getAuth(payload.email, payload.password)
+    ),
     switchMap((auth: Auth) => {
       console.log(auth);
       return of(new fromAuth.GetAuthSuccess(auth));

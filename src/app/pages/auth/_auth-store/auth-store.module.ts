@@ -10,7 +10,7 @@ import { AuthEffects } from './auth.effects';
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature('config', authReducers),
+    StoreModule.forFeature('auth', authReducers),
     EffectsModule.forFeature([AuthEffects]),
   ],
   providers: [AuthEffects],
