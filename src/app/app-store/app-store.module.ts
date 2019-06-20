@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { UserStoreModule } from '../pages/user/_user-store/user-store.module';
-import { AuthStoreModule } from '../pages/user/_auth-store/auth-store.module';
+import { AuthStoreModule } from '../pages/auth/_auth-store/auth-store.module';
 import { CartoonStoreModule } from '../pages/cartoon/_cartoon-store/cartoon-store.module';
 import { appReducers } from './reducers/app.reducer';
 import { AppState } from './state/app.state';

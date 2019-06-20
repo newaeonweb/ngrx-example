@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import { AppState } from './app-store/state/app.state';
-import { GetAuth } from './pages/user/_auth-store/auth.actions';
-import { selectConfig } from './pages/user/_auth-store/auth.selectors';
+import { GetAuth } from './pages/auth/_auth-store/auth.actions';
+import { selectConfig } from './pages/auth/_auth-store/auth.selectors';
 
 @Component({
   selector: 'app-root',

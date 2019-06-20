@@ -7,7 +7,7 @@ import {
 import {
   AuthState,
   initialAuthState,
-} from '../../pages/user/_auth-store/auth.state';
+} from '../../pages/auth/_auth-store/auth.state';
 
 import {
   CartoonState,
