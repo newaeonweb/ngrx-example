@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import { AppState } from './app-store/state/app.state';
-import { GetConfig } from './pages/user/_user-store/config.actions';
-import { selectConfig } from './pages/user/_user-store/config.selectors';
+import { GetAuth } from './pages/user/_auth-store/auth.actions';
+import { selectConfig } from './pages/user/_auth-store/auth.selectors';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,6 @@ export class AppComponent implements OnInit {
   config$ = this.store.pipe(select(selectConfig));
 
   ngOnInit() {
-    this.store.dispatch(new GetConfig());
+    this.store.dispatch(new GetAuth());
   }
 }

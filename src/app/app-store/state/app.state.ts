@@ -5,9 +5,9 @@ import {
 } from '../../pages/user/_user-store/user.state';
 
 import {
-  ConfigState,
-  initialConfigState,
-} from '../../pages/user/_user-store/config.state';
+  AuthState,
+  initialAuthState,
+} from '../../pages/user/_auth-store/auth.state';
 
 import {
   CartoonState,
@@ -18,13 +18,13 @@ export interface AppState {
   router?: RouterReducerState;
   users: UserState;
   cartoon: CartoonState;
-  config: ConfigState;
+  auth: AuthState;
 }
 
 export const initialAppState: AppState = {
   users: initialUserState,
   cartoon: initialCartoonState,
-  config: initialConfigState,
+  auth: initialAuthState,
 };
 
 export function getInitialState(): AppState {
