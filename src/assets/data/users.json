@@ -3,17 +3,14 @@
     {
       "id": 1,
       "name": "Frank Sinatra",
-      "password": "123456",
-      "cardNumber": "XXXX-XXXX-XXXX-4321",
-      "cardType": "Visa"
+      "email": "frank@sinatra.com",
+      "password": "123456"
     },
     {
       "id": 2,
       "name": "Johnny Cash",
       "email": "johnny@cash.com",
-      "password": "123456",
-      "cardNumber": "XXXX-XXXX-XXXX-1369",
-      "cardType": "Master"
+      "password": "123456"
     }
   ]
 }
