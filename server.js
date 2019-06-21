@@ -82,7 +82,11 @@ server.post('/api/signin', (req, res) => {
     res.status(status).json({ status, message });
     return;
   }
-  res.status(200).json({ email: email, password: password, name: 'johnny' });
+
+  // Get user from DB
+  let user = userdb.users.find(user => user.email === email);
+
+  res.status(200).json({ email: email, password: password, name: user.name });
 });
 
 server.use(router);
