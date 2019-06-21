@@ -11,7 +11,19 @@ export const cartoonRoutes: Routes = [
     component: CharacterListPageComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'character/:id', component: CharacterDetailPageComponent },
-  { path: 'episodes', component: EpisodeListPageComponent },
-  { path: 'episode/:id', component: EpisodeDetailPageComponent },
+  {
+    path: 'character/:id',
+    component: CharacterDetailPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'episodes',
+    component: EpisodeListPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'episode/:id',
+    component: EpisodeDetailPageComponent,
+    canActivate: [AuthGuard],
+  },
 ];

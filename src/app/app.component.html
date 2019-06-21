@@ -2,7 +2,7 @@
   <div *ngIf="!(auth$ | async)?.isAuthenticated; then doSomething; else doSomethingElse;"></div>
   <ng-template #doSomething>
     <div class="nav-left">
-      <a routerLink="/home">NGRX-EXAMPLE</a>
+      <a routerLink="/">NGRX-EXAMPLE</a>
     </div>
     <div class="nav-right">
       <a [routerLink]="['/signin']" routerLinkActive="active"> Signin</a>
