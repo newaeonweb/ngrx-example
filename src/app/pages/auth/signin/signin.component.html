@@ -2,9 +2,9 @@
   <br>
   <h3 class="is-text-center">Signin</h3>
   <hr>
-  <div *ngIf="errorMessage">
-    <div class="alert alert-danger" role="alert">
-      {{errorMessage}}
+  <div *ngIf="auth$ | async as error">
+    <div class="text-error is-text-center">
+      {{ error.errorMessage}}
     </div>
   </div>
   <form (ngSubmit)="onSubmit()" ngNativeValidate>

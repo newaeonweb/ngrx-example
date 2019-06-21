@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Effect, ofType, Actions } from '@ngrx/effects';
-import { switchMap, map, tap } from 'rxjs/operators';
+import { switchMap, map, tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 import { Auth } from '../models/auth';
@@ -21,14 +21,18 @@ export class AuthEffects {
   getAuth$ = this.actions$.pipe(
     ofType<fromAuth.GetAuth>(fromAuth.AuthActionsType.GetAuth),
     map((action: fromAuth.GetAuth) => action.payload),
-    switchMap(payload =>
-      this.authService.getAuth(payload.email, payload.password)
-    ),
-    switchMap(auth => {
-      console.log(auth);
-      return of(new fromAuth.GetAuthSuccess(auth));
-    }),
-    tap(() => this.router.navigateByUrl('/characters'))
+    switchMap(payload => {
+      return this.authService.getAuth(payload.email, payload.password).pipe(
+        map(user => {
+          this.router.navigateByUrl('/characters');
+          return new fromAuth.GetAuthSuccess(user);
+        }),
+        catchError(err => {
+          console.log(err);
+          return of(new fromAuth.GetAuthFail({ error: err.error.message }));
+        })
+      );
+    })
   );
 
   @Effect({ dispatch: false })

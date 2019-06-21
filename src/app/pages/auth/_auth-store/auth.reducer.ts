@@ -18,6 +18,13 @@ export const authReducers = (
       };
     }
 
+    case AuthActionsType.GetAuthFail: {
+      return {
+        ...state,
+        errorMessage: action.payload.error,
+      };
+    }
+
     case AuthActionsType.LogOut: {
       return initialAuthState;
     }
