@@ -10,7 +10,7 @@ import { AppStoreModule } from './app-store/app-store.module';
 
 // App modules
 import { BeerModule } from './pages/beer/beer.module';
-import { UserModule } from './pages/user/user.module';
+import { HomeModule } from './pages/home/home.module';
 
 // App components
 import { AppComponent } from './app.component';
@@ -26,7 +26,7 @@ import { AuthModule } from './pages/auth/auth.module';
     AppStoreModule,
     AuthModule,
     BeerModule,
-    UserModule,
+    HomeModule,
     CartoonModule,
   ],
   bootstrap: [AppComponent],

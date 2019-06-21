@@ -5,7 +5,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { UserStoreModule } from '../pages/user/_user-store/user-store.module';
 import { AuthStoreModule } from '../pages/auth/_auth-store/auth-store.module';
 import { CartoonStoreModule } from '../pages/cartoon/_cartoon-store/cartoon-store.module';
 import { appReducers } from './reducers/app.reducer';
@@ -23,7 +22,6 @@ export const metaReducers = environment.production ? [] : [logger];
   declarations: [],
   imports: [
     CommonModule,
-    UserStoreModule,
     AuthStoreModule,
     CartoonStoreModule,
     StoreModule.forRoot(appReducers, { metaReducers }),

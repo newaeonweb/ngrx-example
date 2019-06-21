@@ -1,8 +1,4 @@
 import { RouterReducerState } from '@ngrx/router-store';
-import {
-  UserState,
-  initialUserState,
-} from '../../pages/user/_user-store/user.state';
 
 import {
   AuthState,
@@ -16,13 +12,11 @@ import {
 
 export interface AppState {
   router?: RouterReducerState;
-  users: UserState;
   cartoon: CartoonState;
   auth: AuthState;
 }
 
 export const initialAppState: AppState = {
-  users: initialUserState,
   cartoon: initialCartoonState,
   auth: initialAuthState,
 };
