@@ -5,6 +5,7 @@ import { AuthState } from './auth.state';
 export enum AuthActionsType {
   GetAuth = '[Auth] Get Auth',
   GetAuthSuccess = '[Auth] Get Auth Success',
+  LogOut = '[Auth] Logout Auth',
 }
 
 export class GetAuth implements Action {
@@ -17,4 +18,9 @@ export class GetAuthSuccess implements Action {
   constructor(public payload: AuthState['user']) {}
 }
 
-export type AuthActions = GetAuth | GetAuthSuccess;
+export class LogOut implements Action {
+  readonly type = AuthActionsType.LogOut;
+  constructor() {}
+}
+
+export type AuthActions = GetAuth | GetAuthSuccess | LogOut;

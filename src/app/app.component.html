@@ -1,13 +1,25 @@
 <nav class="nav">
-  <div class="nav-left">
-    <a class="" href="#">NGRX-EXAMPLE</a>
-    <!-- <a [routerLink]="['/beers']" routerLinkActive="active"> Beers</a> -->
-    <a [routerLink]="['/characters']" routerLinkActive="active"> Characters</a>
-    <a [routerLink]="['/episodes']" routerLinkActive="active"> Episodes</a>
-  </div>
-  <div class="nav-right">
-    <a [routerLink]="['/users']" routerLinkActive="active">{{ (auth$ | async)?.user?.email }}</a>
-  </div>
+  <div *ngIf="!(auth$ | async)?.isAuthenticated; then doSomething; else doSomethingElse;"></div>
+  <ng-template #doSomething>
+    <div class="nav-left">
+      <a class="" href="#">NGRX-EXAMPLE</a>
+    </div>
+    <div class="nav-right">
+      <a [routerLink]="['/signin']" routerLinkActive="active"> Signin</a>
+      <a [routerLink]="['/signup']" routerLinkActive="active"> Signup</a>
+    </div>
+  </ng-template>
+  <ng-template #doSomethingElse>
+    <div class="nav-left">
+      <a class="" href="#">DASHBOARD</a>
+      <a [routerLink]="['/characters']" routerLinkActive="active"> Characters</a>
+      <a [routerLink]="['/episodes']" routerLinkActive="active"> Episodes</a>
+    </div>
+    <div class="nav-right">
+      <a [routerLink]="['/users']" routerLinkActive="active">{{ (auth$ | async)?.user?.email }}</a>
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+  </ng-template>
 </nav>
 <br>
 <router-outlet></router-outlet>

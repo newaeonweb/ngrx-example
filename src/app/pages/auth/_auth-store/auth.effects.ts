@@ -24,4 +24,12 @@ export class AuthEffects {
       return of(new fromAuth.GetAuthSuccess(auth));
     })
   );
+
+  @Effect({ dispatch: false })
+  LogOut$ = this.actions$.pipe(
+    ofType(fromAuth.AuthActionsType.LogOut)
+    // tap(user => {
+    //   localStorage.removeItem('token');
+    // })
+  );
 }

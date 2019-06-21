@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import { AppState } from './app-store/state/app.state';
-import { GetAuth } from './pages/auth/_auth-store/auth.actions';
+import { GetAuth, LogOut } from './pages/auth/_auth-store/auth.actions';
 import { selectAuth } from './pages/auth/_auth-store/auth.selectors';
 
 @Component({
@@ -17,5 +17,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     // this.store.dispatch(new GetAuth());
+  }
+
+  logout() {
+    this.store.dispatch(new LogOut());
   }
 }

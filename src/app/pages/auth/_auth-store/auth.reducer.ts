@@ -18,6 +18,10 @@ export const authReducers = (
       };
     }
 
+    case AuthActionsType.LogOut: {
+      return initialAuthState;
+    }
+
     default:
       return state;
   }
