@@ -29,7 +29,7 @@ import { Episode } from '../../models/episode';
                     alt=""
                     style="height:80px!important; margin: 0 auto; border-radius: 50%;"
                   />
-                  <p>{{ item.name }}</p>
+                  <p class="bg-light">{{ item.name }}</p>
                 </a>
               </div>
             </li>

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
     <div class="page">
       <div class="page-content">
         <div class="container">
-          <div class="row">
+          <div class="row is-center">
             <div class="card is-text-center">
               <header>
                 <h4>
@@ -17,9 +17,8 @@ import { Component, OnInit } from '@angular/core';
                 src="./assets/images/rkmt.jpeg"
                 style="height:250px!important; margin: 0 auto; border-radius: 5px;"
               />
-              <p>
-                HEY, DID YOU EVER WANT TO HOLD A TERRY FOLD? I GOT ONE RIGHT
-                HERE, GRAB MY TERRY FLAP
+              <p class="bg-primary text-white">
+                NGRX Example using state management and simple authentication
               </p>
               <footer class="is-center">
                 <p>
@@ -32,6 +31,7 @@ import { Component, OnInit } from '@angular/core';
       </div>
     </div>
   `,
+  styles: ['.card { background-color: #fff9ed; width: 60%; }'],
 })
 export class HomeListPageComponent implements OnInit {
   constructor() {}
