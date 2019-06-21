@@ -5,5 +5,5 @@ const authState = createFeatureSelector<AuthState>('auth');
 
 export const selectAuth = createSelector(
   authState,
-  (state: AuthState) => state.auth
+  (state: AuthState) => state
 );

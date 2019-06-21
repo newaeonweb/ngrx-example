@@ -6,6 +6,7 @@ import { of } from 'rxjs';
 import { Auth } from '../models/auth';
 import { AuthService } from '../services/auth.service';
 import * as fromAuth from './auth.actions';
+import { AuthState } from './auth.state';
 
 @Injectable()
 export class AuthEffects {
@@ -18,7 +19,7 @@ export class AuthEffects {
     switchMap(payload =>
       this.authService.getAuth(payload.email, payload.password)
     ),
-    switchMap((auth: Auth) => {
+    switchMap(auth => {
       console.log(auth);
       return of(new fromAuth.GetAuthSuccess(auth));
     })

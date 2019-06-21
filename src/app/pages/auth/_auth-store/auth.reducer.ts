@@ -9,7 +9,12 @@ export const authReducers = (
     case AuthActionsType.GetAuthSuccess: {
       return {
         ...state,
-        auth: action.payload,
+        isAuthenticated: true,
+        user: {
+          name: action.payload.name,
+          email: action.payload.email,
+        },
+        errorMessage: null,
       };
     }
 

@@ -82,7 +82,7 @@ server.post('/api/signin', (req, res) => {
     res.status(status).json({ status, message });
     return;
   }
-  res.status(200).json({ email: email, password: password });
+  res.status(200).json({ email: email, password: password, name: 'johnny' });
 });
 
 server.use(router);

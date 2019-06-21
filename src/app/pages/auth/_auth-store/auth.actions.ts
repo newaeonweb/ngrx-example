@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { Auth } from '../models/auth';
+import { AuthState } from './auth.state';
 
 export enum AuthActionsType {
   GetAuth = '[Auth] Get Auth',
@@ -13,7 +14,7 @@ export class GetAuth implements Action {
 
 export class GetAuthSuccess implements Action {
   public readonly type = AuthActionsType.GetAuthSuccess;
-  constructor(public payload: Auth) {}
+  constructor(public payload: AuthState['user']) {}
 }
 
 export type AuthActions = GetAuth | GetAuthSuccess;
