@@ -1,27 +1,33 @@
 # NgrxExample
 
+A well structured Angular project built using NGRX state managemant, including auth module with **signin**, **signup** and **logout**.
+
+![ngrx-example](/example-images/ngrx-structure.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
-## Development server
+## Front Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Backend Development server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm run start:dev`. The project has a simple Node server implemented.
 
-## Build
+### Home
+![ngrx-example](/example-images/ngrx-1.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Signin
+![ngrx-example](/example-images/ngrx-2.png)
 
-## Running unit tests
+**User**: johnny@cash.com
+**Password**: 123456
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Dashboard
+![ngrx-example](/example-images/ngrx-3.png)
 
-## Running end-to-end tests
+### Character Detail
+![ngrx-example](/example-images/ngrx-4.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Episode Detail
+![ngrx-example](/example-images/ngrx-5.png)
