@@ -21,7 +21,7 @@ export const authReducers = (
     case AuthActionsType.GetAuthFail: {
       return {
         ...state,
-        errorMessage: action.payload.error,
+        errorMessage: action.payload.error || 'Request Fail, sorry!',
       };
     }
 
