@@ -14,46 +14,10 @@ import { of, Observable } from 'rxjs';
   selector: 'app-episode-detail-page',
   template: `
     <div class="container">
-      <div *ngIf="episode$ | async as episode">
-        <div class="card is-text-center">
-          <header>
-            <h4 class="text-primary ">{{ episode.name }}</h4>
-            <img
-              src="{{ episode.image }}"
-              alt=""
-              style="height:250px!important; margin: 0 auto;"
-            />
-            <p>
-              On Air: {{ episode.air_date }} | Season: {{ episode.episode }}
-            </p>
-            <br />
-            <hr />
-          </header>
-          <div *ngIf="characters$ | async as character">
-            <h5>This episode have {{ character.length }} Characters:</h5>
-            <ul class="row">
-              <li class="col-3" *ngFor="let item of character">
-                <div class="card">
-                  <a routerLink="/character/{{ item.id }}">
-                    <img
-                      src="{{ item.image }}"
-                      alt=""
-                      style="height:50px!important; margin: 0 auto; border-radius: 50%;"
-                    />
-                    <p>{{ item.name }}</p>
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <hr />
-          <footer class="is-center">
-            <p class="text-grey">
-              <strong>Created</strong> : {{ episode.created }}
-            </p>
-          </footer>
-        </div>
-      </div>
+      <app-episode-detail
+        [episode]="episode$ | async"
+        [characters]="characters$ | async"
+      ></app-episode-detail>
     </div>
   `,
   styleUrls: ['./episode-detail-page.component.scss'],

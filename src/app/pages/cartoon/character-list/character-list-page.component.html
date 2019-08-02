@@ -22,12 +22,12 @@
 <div class="page">
   <div class="page-content">
     <div class="container">
-            <form>
-              <div class="form-group">
-                <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="search"
-                  [ngModelOptions]="{standalone: true}">
-              </div>
-            </form>
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="search"
+            [ngModelOptions]="{standalone: true}">
+        </div>
+      </form>
       <div class="row">
         <div class="col" *ngIf="info$ | async as info">
         <p class="is-center">Characters found: {{info.count}} | Pages: {{ info.pages }}</p>

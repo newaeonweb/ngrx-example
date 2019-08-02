@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4200/assets/data/',
+  apiUrl: 'http://localhost:3000/api/',
   cartoonApi: 'https://rickandmortyapi.com/api/',
 };
 

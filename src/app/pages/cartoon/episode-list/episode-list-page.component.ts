@@ -24,31 +24,10 @@ import { CartoonService } from '../services/cartoon.service';
               </p>
             </div>
           </div>
-          <div class="row">
-            <div
-              class="card is-text-center col-6 col-4-md col-4-lg"
-              *ngFor="let item of episodes$ | async as episode; let i = index"
-              (click)="navigateTo(item.id)"
-            >
-              <header>
-                <h4>
-                  <a routerLink="/episode/{{ item.id }}"
-                    >#{{ i + 1 }} {{ item.name }}
-                  </a>
-                </h4>
-                <hr />
-                <p>
-                  Season: <span class="text-grey">{{ item.episode }}</span>
-                </p>
-              </header>
-
-              <footer class="is-center">
-                <p>
-                  On air: <span class="text-grey">{{ item.air_date }}</span>
-                </p>
-              </footer>
-            </div>
-          </div>
+          <app-episode-list
+            [episodes]="episodes$ | async"
+            (episodeSelected)="navigateTo($event)"
+          ></app-episode-list>
         </div>
       </div>
     </div>

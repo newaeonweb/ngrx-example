@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import { AppState } from './app-store/state/app.state';
-import { GetConfig } from './pages/user/_user-store/config.actions';
-import { selectConfig } from './pages/user/_user-store/config.selectors';
+import { GetAuth, LogOut } from './pages/auth/_auth-store/auth.actions';
+import { selectAuth } from './pages/auth/_auth-store/auth.selectors';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +13,13 @@ import { selectConfig } from './pages/user/_user-store/config.selectors';
 export class AppComponent implements OnInit {
   constructor(private store: Store<AppState>) {}
   title = 'ngrx-example';
-  config$ = this.store.pipe(select(selectConfig));
+  auth$ = this.store.pipe(select(selectAuth));
 
   ngOnInit() {
-    this.store.dispatch(new GetConfig());
+    // this.store.dispatch(new GetAuth());
+  }
+
+  logout() {
+    this.store.dispatch(new LogOut());
   }
 }

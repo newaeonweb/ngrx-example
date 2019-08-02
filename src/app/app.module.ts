@@ -9,12 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppStoreModule } from './app-store/app-store.module';
 
 // App modules
-import { BeerModule } from './pages/beer/beer.module';
-import { UserModule } from './pages/user/user.module';
+import { AuthModule } from './pages/auth/auth.module';
+import { HomeModule } from './pages/home/home.module';
+import { CartoonModule } from './pages/cartoon/cartoon.module';
 
 // App components
 import { AppComponent } from './app.component';
-import { CartoonModule } from './pages/cartoon/cartoon.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +23,8 @@ import { CartoonModule } from './pages/cartoon/cartoon.module';
     AppRoutingModule,
     HttpClientModule,
     AppStoreModule,
-    BeerModule,
-    UserModule,
+    AuthModule,
+    HomeModule,
     CartoonModule,
   ],
   bootstrap: [AppComponent],
