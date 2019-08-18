@@ -1,13 +1,11 @@
 {
-  // Set the default
   "editor.formatOnSave": false,
   "editor.formatOnPaste": true,
-  // Enable per-language
   "[javascript]": {
-      "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
