@@ -1,5 +1,7 @@
 # NgrxExample
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f5864f358f5b49e58f7de12bab20549d)](https://app.codacy.com/app/newaeonweb/ngrx-example?utm_source=github.com&utm_medium=referral&utm_content=newaeonweb/ngrx-example&utm_campaign=Badge_Grade_Dashboard)
+
 A well structured Angular project built using NGRX state managemant, including auth module with **signin**, **signup** and **logout**.
 
 ![ngrx-example](/example-images/ngrx-structure.png)
